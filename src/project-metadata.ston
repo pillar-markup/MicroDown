@@ -1,0 +1,41 @@
+{#version:'1.0'}
+{
+	#name : 'Microdown',
+	#description : '',
+	#dependencies : [
+		{
+			#baseline : #PillarDocumentModel,
+			#url : 'git@github.com:pillar-markup/pillar.git',
+			#version : 'v8.0.12'
+		}
+	],
+	#units : [
+		{
+			#name : #Microdown,
+			#description : ''
+		},
+		{
+			#name : #Microdown-Pillar,
+			#description : '',
+			#dependencies : [
+				#Microdown,
+				#PillarDocumentModel
+			]
+		},
+		{
+			#name : #Microdown-Pillar-Tests,
+			#description : '',
+			#dependencies : [
+				#Microdown-Pillar,
+				#Microdown-Tests
+			]
+		},
+		{
+			#name : #Microdown-Tests,
+			#description : '',
+			#dependencies : [
+				#Microdown
+			]
+		}
+	]
+}
